@@ -1,0 +1,26 @@
+<div>
+
+  <p-fieldset [style.width]="'50%'" legend="Employee Registration">
+    <form>
+    <div class="form-group" style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
+      <span style="padding-right: 20px"><label for="firstName">First Name:</label></span> <span><input required pInputText type="text" name="firstName"
+                                                                           id="firstName"/></span>
+    </div>
+    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
+      <span style="padding-right: 20px"><label for="lastName">Last Name:</label></span> <span><input required pInputText type="text" name="lastName"
+                                                                         id="lastName"/></span>
+    </div>
+    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
+      <span style="padding-right: 37px"><label>Gender:</label></span> <span><input type="radio" name="gender" value="Male"/>Male  <input type="radio" name="gender" value="Female"/>Female</span>
+    </div>
+    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
+      <span style="padding-right: 65px"><label>DOB</label></span> <span><input required pInputText type="text" placeholder="MM/ddd/YYYY"></span>
+    </div>
+    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
+      <input type="submit" value="Register">
+    </div>
+  </form>
+
+
+</p-fieldset>
+</div>
