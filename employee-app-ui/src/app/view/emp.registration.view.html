@@ -1,26 +1,26 @@
 <div>
-
   <p-fieldset [style.width]="'50%'" legend="Employee Registration">
-    <form>
-    <div class="form-group" style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
+    <form id="registrationForm" (ngSubmit)="onEmployeeSave(empForm)" #empForm="ngForm">
+    <div class="form-group">
       <span style="padding-right: 20px"><label for="firstName">First Name:</label></span> <span><input required pInputText type="text" name="firstName"
-                                                                           id="firstName"/></span>
+                                                                           id="firstName" [(ngModel)]="employee.firstName"/></span>
     </div>
-    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
+    <div>
       <span style="padding-right: 20px"><label for="lastName">Last Name:</label></span> <span><input required pInputText type="text" name="lastName"
-                                                                         id="lastName"/></span>
+                                                                         id="lastName" [(ngModel)]="employee.lastName"/></span>
     </div>
-    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
-      <span style="padding-right: 37px"><label>Gender:</label></span> <span><input type="radio" name="gender" value="Male"/>Male  <input type="radio" name="gender" value="Female"/>Female</span>
+    <div>
+      <span style="padding-right: 37px"><label>Gender:</label></span> <span><input [(ngModel)]="employee.gender" type="radio" name="gender" value="Male"/>Male  <input [(ngModel)]="employee.gender" type="radio" name="gender" value="Female"/>Female</span>
     </div>
-    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
-      <span style="padding-right: 65px"><label>DOB</label></span> <span><input required pInputText type="text" placeholder="MM/ddd/YYYY"></span>
+    <div>
+      <span style="padding-right: 65px"><label>DOB</label></span> <span><input name="dob" [(ngModel)]="employee.dob" required pInputText type="text" placeholder="MM/ddd/YYYY"></span>
     </div>
-    <div style="margin-top: 10px;padding-left:10px;padding-bottom: 15px;">
-      <input type="submit" value="Register">
+      <div>
+        <span style="padding-right: 11px"><label>Department</label></span> <span><input [(ngModel)]="employee.department" name="department" ngModel required pInputText type="text"></span>
+      </div>
+    <div>
+      <input [disabled]="empForm.form.status === 'INVALID'" type="submit" value="Register">
     </div>
   </form>
-
-
 </p-fieldset>
 </div>
